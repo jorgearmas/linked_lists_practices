@@ -1,4 +1,5 @@
 # Write a Python program to create a singly linked list, append some items and iterate through the list.
+
 class Node:
     def __init__(self, value, next_node=None):
         self.value = value
@@ -25,7 +26,6 @@ class LinkedList:
     def print_ll(self):
         current_node = self.head_node
         while current_node is not None:
-            #print(current_node.get_value())
             if current_node.get_value() != None:
                 print(current_node.get_value())
             current_node = current_node.get_next_node()
