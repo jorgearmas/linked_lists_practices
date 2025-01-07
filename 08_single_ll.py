@@ -52,6 +52,27 @@ class LinkedList:
             node1.set_next_node(node2_prev.get_next_node())
             node2_prev.set_next_node(node1)
             self.head_node = node2
+        
+        if node2_prev is None:
+            node1_prev.set_next_node(node1.get_next_node())
+            node1.set_next_node(node2.get_next_node())
+            node2.set_next_node(node1_prev.get_next_node())
+            node1_prev.set_next_node(node2)
+            self.head_node = node1
+        
+        node2_prev.set_next_node(node2.get_next_node())
+        node1_prev.set_next_node(node2)
+        node2.set_next_node(node1.get_next_node())
+        node1.set_next_node(node2_prev.get_next_node())
+        node2_prev.set_next_node(node1)
+
+        # if node2_prev is not None:
+        #     print('vox')
+        #     node1_prev.set_next_node(node1.get_next_node())
+        #     node2_prev.set_next_node(node1)
+        #     node1.set_next_node(node2.get_next_node())
+        #     node2.set_next_node(node1_prev.get_next_node())
+        #     node1_prev.set_next_node(node2)
             
 my_linked_list = LinkedList(10)
 my_linked_list.insert_beginning(20)
@@ -64,7 +85,7 @@ my_linked_list.insert_beginning(80)
 my_linked_list.insert_beginning(90)
 my_linked_list.insert_beginning(1000)
 
-my_linked_list.swap_nodes(1000, 500)
+my_linked_list.swap_nodes(500, 20)
 my_linked_list.print_list()
 
 
